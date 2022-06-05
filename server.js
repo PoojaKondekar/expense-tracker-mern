@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const colors = require('colors');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
-
+const bcrypt = require('bcrypt-nodejs');
 dotenv.config({ path: './config/config.env' });
 
 connectDB();
@@ -12,7 +12,7 @@ connectDB();
 const transactions = require('./routes/transactions');
 
 const app = express();
-
+app.get('/',(req,res)=>res.send('Hello pooja,you can do it'));
 app.use(express.json());
 
 if(process.env.NODE_ENV === 'development') {
